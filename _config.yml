@@ -5,7 +5,7 @@
 # Site
 title: Joker Xin
 subtitle: Blog
-description: 专注于计算机网络、软件开发和编程语言等方面的经验分享和技术交流，帮助解决问题并提升专业技能。
+description: 生命不息，Coding 不止
 keywords: >-
   云计算, 大数据, 区块链, 软件开发, 程序设计, 算法,
   计算机科学, 网络技术, 人工智能, 机器学习, 深度学习, 科技博客,
@@ -17,7 +17,7 @@ timezone: 'Asia/Shanghai'
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://www.jokerxin.com
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
