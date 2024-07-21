@@ -3,22 +3,25 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: Joker Xin
+subtitle: Blog
+description: 专注于计算机网络、软件开发和编程语言等方面的经验分享和技术交流，帮助解决问题并提升专业技能。
+keywords: >-
+  云计算, 大数据, 区块链, 软件开发, 程序设计, 算法,
+  计算机科学, 网络技术, 人工智能, 机器学习, 深度学习, 科技博客,
+  Python, Java, JavaScript, Go, Golang, C++, C, Rust, Shell, Linux, Windows, MacOS, Web
+author: Joker Xin
+language: zh
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://www.jokerxin.com
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -89,9 +92,38 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
+# 处理或不处理目录或文件
 include:
+  - ".nojekyll"
+  # 处理 'source/css/_typing.css'
+  - "css/_typing.css"
+  # 处理 'source/_css/' 中的任何文件，但不包括子目录及其其中的文件。
+  - "_css/*"
+  # 处理 'source/_css/' 中的任何文件和子目录下的任何文件。
+  - "_css/**/*"
+
 exclude:
+  # 不处理 'source/js/test.js'。
+  - "js/test.js"
+  # 不处理 'source/js/' 中的文件、但包括子目录下的所有目录和文件。
+  - "js/*"
+  # 不处理 'source/js/' 中的文件和子目录下的任何文件。
+  - "js/**/*"
+  # 不处理 'source/js/' 目录下的所有文件名以 'test' 开头的文件，但包括其它文件和子目录下的单文件。
+  - "js/test*"
+  # 不处理 'source/js/' 及其子目录中任何以 'test' 开头的文件。
+  - "js/**/test*"
+  # 不要用 exclude 来忽略 'source/_posts/' 中的文件。
+  # 你应该使用 'skip_render'。 或者在要忽略的文件的文件名之前加一个下划线 '_'。
+  # - "_posts/hello-world.md" # 在这里配置是没有用的。
+
 ignore:
+  # 忽略任何一个名叫 'foo' 的文件夹。
+  - "**/foo"
+  # 只忽略 'themes/' 下的 'foo' 文件夹。
+  - "**/themes/*/foo"
+  # 对 'themes/' 目录下的每个文件夹中忽略名叫 'foo' 的子文件夹。
+  - "**/themes/**/foo"
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
